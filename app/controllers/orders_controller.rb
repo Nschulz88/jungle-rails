@@ -2,6 +2,10 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    puts "This is your order: #{@order}!!!!!!"
+    puts "This is your order.total_price: #{@order.total_cents}!!!!!!"
+    puts "This is your order.line_items.product: #{@order.line_items.product}!!!!!!"
+
   end
 
   def create
