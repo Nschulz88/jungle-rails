@@ -2,9 +2,10 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    puts "This is your order: #{@order}!!!!!!"
+    puts "This is your order: #{@order.email}!!!!!!"
     puts "This is your order.total_price: #{@order.total_cents}!!!!!!"
     puts "This is your order.line_items.product: #{@order.line_items.product}!!!!!!"
+
 
   end
 
@@ -14,7 +15,8 @@ class OrdersController < ApplicationController
 
     if order.valid?
       empty_cart!
-      redirect_to order, notice: 'Your Order has been placed.'
+      UserMailer.order_confirmation(order).deliver
+      redirect_to order, notice: 'Your Order has been placed, you will receive a confirmation email shortly.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
     end
