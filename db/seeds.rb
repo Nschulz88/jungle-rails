@@ -132,5 +132,50 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## DUMMY_USERS
+
+User.destroy_all
+
+puts "Creating Dummy-Users ..."
+
+10.times do
+  User.create!(
+    name: Faker::Name.first_name,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password
+  )
+end
+
+## REVIEWS
+
+puts "Creating Reviews ..."
+
+Review.create! ({
+  product_id: 1,
+  user_id: 2,
+  rating: 4
+})
+
+Review.create! ({
+  product_id: 6,
+  user_id: 2,
+  description: "My shoes got blisters, but other than that they are very comfortable!",
+  rating: 3
+})
+
+Review.create! ({
+  product_id: 12,
+  user_id: 1,
+  description: "My books constantly fall off this shelf. Very annoying",
+  rating: 1
+})
+
+Review.create! ({
+  product_id: 3,
+  description: "BEST SLEEP EVAAA",
+  user_id: 1,
+  rating: 5
+})
+
 
 puts "DONE!"
