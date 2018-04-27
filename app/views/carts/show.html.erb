@@ -4,6 +4,9 @@
     <h1>My Cart</h1>
   </header>
 
+<% if cart_empty?(@cart_total) %>
+<h2>Your cart is empty! Go back to <%= link_to "shop", products_path %>
+<%else%>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -33,6 +36,8 @@
     </table>
   </div>
 
+
+
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -49,5 +54,6 @@
       <% end %>
     </div>
   </div>
+<%end%>
 
 </section>
