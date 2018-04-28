@@ -42,12 +42,13 @@
       <% @reviews.each do |r| %>
         <div class="col-sm-8">
           <dl class="dl-horizontal">
+            <dd><%= r.user_name || "Anonymous" %> says:</dd>
             <dt>Rating</dt>
-            <dd><%= r.rating %></dd>
+            <dd><%= show_stars(r.rating) %></dd>
             <dt>Description</dt>
             <dd><%= r.description %></dd>
             <% if r.user_id == current_user[:id] %>
-            <%= button_to 'Delete my review', [@product, r],
+            <%= button_to 'Delete review', [@product, r],
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
             <%end%>
