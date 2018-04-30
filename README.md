@@ -1,14 +1,15 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A dummy version of a mini e-commerce application built with Rails 4.2.
 
 
 ## Final Product 
 
-!["Homepage"](https://github.com/Nschulz88/jungle-rails/blob/6c2e68c5b2f2b5678a95f3068776ece94fb73c77/app/assets/images/screenshot_home.png){: .shadow}
-!["Product page"](https://github.com/Nschulz88/jungle-rails/blob/6c2e68c5b2f2b5678a95f3068776ece94fb73c77/app/assets/images/screenshot_product.png){: .shadow}
-!["Registration"](https://github.com/Nschulz88/jungle-rails/blob/6c2e68c5b2f2b5678a95f3068776ece94fb73c77/app/assets/images/screenshot_registration.png){: .shadow}
+<img src="https://github.com/Nschulz88/jungle-rails/blob/6c2e68c5b2f2b5678a95f3068776ece94fb73c77/app/assets/images/screenshot_home.png" alt="homepage"/>
 
+<img src="https://github.com/Nschulz88/jungle-rails/blob/6c2e68c5b2f2b5678a95f3068776ece94fb73c77/app/assets/images/screenshot_product.png" alt="Product page"/>
+
+<img src="https://github.com/Nschulz88/jungle-rails/blob/6c2e68c5b2f2b5678a95f3068776ece94fb73c77/app/assets/images/screenshot_registration.png" alt="Registration"/>
 
 ## Dependencies
 
