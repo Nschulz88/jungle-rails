@@ -8,14 +8,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Jungle</a>
+      <a class="navbar-brand" href="/">
+      <span><%= image_tag "if_face-monkey_118876.png", :class => "d-inline-block align-top" %></span>
+      Jungle</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li>
-          <%= link_to 'Home', :root %>
-        </li>
-        <li class="dropdown">
+
+      <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             Categories
             <span class="caret"></span>
@@ -26,9 +26,6 @@
             <% end %>
           </ul>
         </li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
@@ -48,21 +45,23 @@
         </li>
    
       </ul>
+
+
       
     </div>
+
+          <ul class="nav pull-right">   
+        <li>
+          <div id="user_nav">
+            <% if current_user %>
+              <li><span>Hi, <%= current_user.name %>! | <%= link_to "Logout", '/logout' %></span></li>
+            <% else %>
+              <li><span><%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %></span></li>
+            <% end %>
+          </div>
+        </li> 
+      </ul>
     
   </div>
-
-  <div style="positon: absolute; top: 30%; left: 20%">
-<div class="nav navbar-nav navbar-right">
-  <% if current_user %>
-    <li>Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %></li>
-    <% else %>
-      <li><%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %></li>
-    <% end %>
-</div>
-</div>
-
-   
 
 </nav>

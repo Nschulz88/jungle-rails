@@ -21,44 +21,34 @@
           <dt>Quantity</dt>
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
-          <dd><%= @product.price %></dd>
+          <dd><%= humanized_money_with_symbol @product.price %></dd>
         </dl>
       </div>
-  <% if current_user %>
-    <div class="col-sm-8"> 
-    <dl class="dl-horizontal">
-      <h2>Write a review:</h2>
-      <%= form_for ([@product, @review]) do |f|%>
-        <dt>Description:</dt>
-        <dd><%= f.text_field :description %></dd>
-        <dt>Rating:</dt>
-        <dd><%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %></dd>
-        <dd><%= f.submit "Submit" %></dd>
-      <% end %>
-      </dl>
+
+    <div class="col-sm-6">
+      <% if current_user %> 
+          <h2>Write a review:</h2>
+          <%= form_for ([@product, @review]) do |f|%>
+            <p>Description:
+            <%= f.text_field :description, style: 'width:100%;' %></p>
+            Rating:
+            <%= f.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
+            <%= f.submit "Submit", :class => "button review-button" %>
+          <% end %>
+      <% end %></br>
     </div>
-  <% end %>
-
-      <% @reviews.each do |r| %>
-        <div class="col-sm-8">
-          <dl class="dl-horizontal">
-            <dd><%= r.user_name || "Anonymous" %> says:</dd>
-            <dt>Rating</dt>
-            <dd><%= show_stars(r.rating) %></dd>
-            <dt>Description</dt>
-            <dd><%= r.description %></dd>
-            <% if r.user_id == current_user[:id] %>
-            <%= button_to 'Delete review', [@product, r],
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-            <%end%>
-          </dl>
-        </div>
-        <%end%>
-
-
-    </div>
-
   </article>
-
+  <div class="reviews">
+    <% @reviews.each do |r| %>
+          <em><%= r.user_name || "Anonymous" %></em> says:</br>
+          <%= show_stars(r.rating) %></br>
+          <%= r.description %>
+          <% if r.user_id == current_user[:id] %>
+          <%= button_to 'Delete my review', [@product, r],
+            method: :delete,
+            data: { confirm: 'Are you sure?' },
+            class: "button delete-button" %>
+          <%end%></br>
+    <%end%>
+  </div>
 </section>

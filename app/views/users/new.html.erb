@@ -1,13 +1,28 @@
 <!-- app/views/users/new.html.erb -->
+  <section class="login-logout">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="avatar">
+            <%= image_tag "if_face-monkey_118876.png", :alt => "Avatar" %>
+          </div>				
+          <h4 class="modal-title">Become a Jungle member</h4>
+        </div>
+        <div class="modal-body">
 
-<h1>Signup!</h1>
-
-<%= form_for :user, url: '/users' do |f| %>
-
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
-
-<% end %>
+        <%= form_for :user, url: '/users' do |f| %>
+        <div class="form-group">
+          <%= f.text_field :name, placeholder: "Name", class: 'form-control' %>
+          <%= f.text_field :email, placeholder: "E-mail", class: 'form-control' %>
+          <%= f.password_field :password, placeholder: "Password", class: 'form-control' %>
+          <%= f.password_field :password_confirmation, placeholder: "Password confirmation", class: 'form-control' %>
+        </div>
+          <%= submit_tag "Register", :class => "btn btn-primary btn-lg btn-block login-btn" %>
+        <% end %>
+        </div>
+        <div class="modal-footer">
+          <a href="/login">I already have an account</a>
+        </div>
+      </div>
+    </div>    
+  </section>

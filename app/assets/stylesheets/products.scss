@@ -1,87 +1,112 @@
-main section.products-index,
-main section.categories-show {
+body {
+  font-family: 'Varela Round', sans-serif;
 
-  .products {
-    display:         flex;
-    flex-direction:  row;
-    flex-wrap:       wrap;
-    justify-content: space-around;
+  main section.products-index,
+  main section.categories-show {
 
-    .product {
-      // flex:      1;
-      max-width: 260px;
-      // so that footer within can be positioned absolutely
-      position:  relative;
+    .products {
+      display:         flex;
+      flex-direction:  row;
+      flex-wrap:       wrap;
+      justify-content: space-around;
 
-      border:        1px solid #ccc;
-      border-radius: 5px;
-      padding:       15px;
-      padding-bottom: 80px;
-      margin-top:    20px;
-      // margin:        10px;
+      .product {
+        // flex:      1;
+        max-width: 260px;
+        // so that footer within can be positioned absolutely
+        position:  relative;
+        border:        1px solid #ccc;
+        border-radius: 5px;
+        padding:       15px;
+        padding-bottom: 80px;
+        margin-top:    20px;
 
-      header img {
-        max-width: 100%;
-        max-height: 140px;
-        margin: auto;
-        display: block;
-      }
+        div.description {
+          display: block; /* or inline-block */
+          text-overflow: ellipsis;
+          overflow: hidden;
+          max-height: 10em;
+        }
 
-      footer {
-        position: absolute;
-        bottom: 0;
-        left:   0;
-        background-color: #EEE;
-        padding: 15px;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-        width: 100%;
-        opacity: 0.3;
-        transition: all 0.3s;
-      }
-
-      aside.price {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 10px;
-        background-color: #eee;
-        border-top-right-radius: 4px;
-        border-bottom-left-radius: 20px;
-        font-size: 0.8em;
-      }
-
-      aside.sold-out {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 10px 15px;
-        color: snow;
-        background-color: tomato;
-        border-top-left-radius: 4px;
-        border-bottom-right-radius: 20px;
-        font-size: 1em;
-      }
-
-      &:hover {
-
-        border-color: #999;
+        header img {
+          max-width: 100%;
+          max-height: 140px;
+          margin: auto;
+          display: block;
+        }
 
         footer {
-          opacity: 1.0;
+          position: absolute;
+          bottom: 0;
+          left:   0;
+          background-color: #EEE;
+          padding: 15px;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          width: 100%;
+          opacity: 0.3;
+          transition: all 0.3s;
+        }
+
+        aside.price {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 10px;
+          background-color: #eee;
+          border-top-right-radius: 4px;
+          border-bottom-left-radius: 20px;
+          font-size: 0.8em;
+        }
+
+        aside.sold-out {
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 10px 15px;
+          color: snow;
+          background-color: tomato;
+          border-top-left-radius: 4px;
+          border-bottom-right-radius: 20px;
+          font-size: 1em;
+        }
+
+        &:hover {
+          border-color: #999;
+          footer {
+            opacity: 1.0;
+          }
         }
       }
-
     }
   }
-}
 
-main section.products-show {
-
-  .product-detail {
-    img.main-img {
-      max-width: 100%;
+  main section.products-show {
+    .product-detail {
+      img.main-img {
+        max-width: 100%;
+      }
+      &.review {
+        display: inline-block;
+        padding-bottom: 30px;
+      }
     }
+
+    .button {
+    color: #636363;
+    border-radius: 4px;
+    padding: 2px 4px;
+    text-decoration: none;
+    border: 1px solid #636363;
+      &.review-button {
+        background-color: lightyellow
+      }
+      &.delete-button {
+        background-color: lightsalmon;
+        display: inline-block;
+      }
+    }
+
   }
 }
 

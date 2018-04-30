@@ -2,9 +2,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Roboto|Varela+Round');
 
 // App
 @import "products";
+@import "login_and_registration";
+
+
 
 // Global
 body {
@@ -15,11 +19,12 @@ body {
     height: auto;
   }
 
-  // div.login-logout {
-  // float: right;
-  // margin-right: 53px;
-  // margin-bottom: 6px;
-  // }
+  .nav {
+  margin-bottom: 8px;
+  }
 
+  .navbar-brand {
+    font-size: 25px;
+    }
 
 }

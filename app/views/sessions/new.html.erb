@@ -1,11 +1,39 @@
-<!-- app/views/sessions/new.html.erb -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login to Jungle</title>
+</head>
+<body>
 
-<h1>Login</h1>
 
-<%= form_tag '/login' do %>
+<!-- Modal HTML -->
+  <section class="login-logout">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="avatar">
+            <%= image_tag "if_face-monkey_118876.png", :alt => "Avatar" %>
+          </div>				
+          <h4 class="modal-title">Enter the Jungle</h4>
+        </div>
+        <div class="modal-body">
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-
-<% end %>
+        <%= form_tag '/login' do %>
+        <div class="form-group">
+          <%= text_field_tag(:email, "", placeholder: "E-mail", class: 'form-control')%>
+          <%= password_field_tag(:password, "", placeholder: "Password", class: 'form-control') %>
+        </div>
+          <%= submit_tag "Login", :class => "btn btn-primary btn-lg btn-block login-btn" %>
+        <% end %>
+        </div>
+        <div class="modal-footer">
+          <a href="/signup">Or Register here</a>
+        </div>
+      </div>
+    </div>    
+  </section>
+</body>
+</html>                            
